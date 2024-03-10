@@ -1,0 +1,97 @@
+.block {
+    width: 980px;
+    height: 330px;
+    margin: 0 auto;
+    margin-top: 20px;
+    /* background-color: antiquewhite; */
+    background-image: url(pictures/bk_resize.png);
+    overflow: hidden;
+}
+.smallblock {
+    width: 460px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
+    float: left;
+    background-image: url(pictures/jianbian_smallblock.png);
+}
+.contentcube {
+    height: 300px;
+    width: 400px;
+    text-align: center;
+    /* background-color: aqua; */
+    float: left;
+    margin-left: 20px;
+    margin-top: auto;
+}
+.contentcube h3 {
+    margin-top: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.contentcube p {
+    text-indent: 2em;
+    text-align: left;
+    font-weight:lighter;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:15px;
+}
+#pic {
+    height: 300px;
+    width: 500px;
+    /* background-color: aqua; */
+    float: left;
+    margin: auto;
+    margin-left: 20px;
+}
+#col_word {
+    height: 300px;
+    width: 100px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-image: url(pictures/mingrenzhuzuo.png);
+}
+#ex_person{
+    height: 250px;
+    width: 860px;
+    float: left;
+    margin-top: 40px;
+    /* background-color: brown; */
+}
+.person {
+    height: 200px;
+    width: 175px;
+    float: left;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* background-color: aqua; */
+}
+#ex_li li {
+    list-style: none;
+    font-size: 40px;
+    font-family:"华文行楷";
+}
+#ex_li_left li {
+    font-size: large;
+    margin-left: 10px;
+}
+#foot {
+    height: 50px;
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-color:aliceblue;
+}
+#foot p {
+	line-height: 60px;
+	text-align: center;
+	font-size: 14px
+}
+#search {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+    font-family: "华文行楷";
+}

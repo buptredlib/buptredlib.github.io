@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <input type="file" id="input" />
+    <div id="output"></div>
+
+    <script>
+      document.getElementById("input").addEventListener("change", function (evt) {
+        var files = evt.target.files;
+        var file = files[0];
+
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          var data = new Uint8Array(e.target.result);
+          var workbook = XLSX.read(data, { type: "array" });
+
+          var sheet_name_list = workbook.SheetNames;
+          var sheet = workbook.Sheets[sheet_name_list[0]];
+
+          var html = XLSX.utils.sheet_to_html(sheet);
+
+          document.getElementById("output").innerHTML = html;
+        };
+
+        reader.readAsArrayBuffer(file);
+      });
+    </script>
+  </body>
+</html>

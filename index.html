@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北邮图书馆红色文献导航</title>
+    <link rel="stylesheet" type="text/css" href="a_new_ui.css"/>
+    <link rel="stylesheet" type="text/css" href="libui.css"/>
+</head>
+<body style="background-image:url(pictures/bg2.jpg);background-size: 100%;">
+    <div style="text-align: center;">
+        <img src="pictures/head.png" style="height: 330px; width: 980px;">
+    </div>
+    <div id="bar">
+        <a name="search"><button onclick="openBookSearch()">图书检索</button></a>
+        <script>
+            // JavaScript函数，用于在点击按钮时打开图书检索网址
+            function openBookSearch() {
+                window.open('http://127.0.0.1:5000', '_blank');
+            }
+        </script>
+        <div class="content hyc">
+            <ul>
+                <li><a href="index.html">导航主页</a></li>
+                <li><a href="#five_zone">五大专题</a></li>
+                <li><a href="#resource">在线经典文献</a></li>
+                <li><a href="#giants">名人著作</a></li>
+                <li><a href="#search">图书检索</a></li>
+                <li><a href="#pictures">图片资料</a></li>
+                <div style="clear:both"></div>
+            </ul>
+        </div>
+    </div>
+    <div class="block" style="background:none">
+        <div class="smallblock" style="margin-left: 0;">
+            
+            <a name="five_zone"><img src="pictures/wudazhutiqu.png"></a>
+            <div id="ex_li" style="margin: 0 auto;text-align: center;margin-top: 20px;">
+                <li><a href="classic.html" target="_self">经典马克思主义</a></li>
+                <li><a href="russian.html" target="_self">俄国马克思主义</a></li>
+                <li><a href="chinese.html" target="_self">中国马克思主义</a></li>
+                <li><a href="abroad.html" target="_self">国外马克思主义</a></li>
+                <li><a href="cpc.html" target="_self">党史党建专题区</a></li>
+            </div>
+        </div>
+        <div class="smallblock" style="float: right;">
+            <a name="resource"><img src="pictures/zaixianjingdianwenxian.png"></a>
+            <div id="ex_li_left" style="margin-top: 20px;">
+                <li><a href="https://www.marxists.org/chinese/marx/01.htm" target="_blank">共产党宣言</a></li>
+                <li><a href="https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-19251201.htm" target="_blank">中国社会各阶级的分析</a></li>
+                <li><a href="https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm" target="_blank">实践论</a></li>
+                <li><a href="https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193708.htm" target="_blank">矛盾论</a></li>
+                <li><a href="https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193805b.htm" target="_blank">论持久战</a></li>
+                <li><a href="https://www.marxists.org/chinese/lenin/191708-09/index.htm" target="_blank">国家与革命</a></li>
+                <li><a href="https://www.marxists.org/chinese/marx/capital/index.htm" target="_blank">资本论第一卷</a></li>
+                <li><a href="https://www.marxists.org/chinese/marx/capital/marxist.org-chinese-marx-capital-vol2-01.htm" target="_blank">资本论第二卷</a></li>
+                <li><a href="https://www.marxists.org/chinese/marx/capital/marxist.org-chinese-marx-capital-vol3-01.htm" target="_blank">资本论第三卷</a></li>
+            </div>
+        </div>
+    </div>
+    
+    <div class="block">
+        <div id="col_word">
+            <a name="giants"></a>
+            <!-- <img src="pictures/mingrenzhuzuo.png"> -->
+        </div>
+        <div id="ex_person">
+            <!-- <img src="pictures/ex_person.png"> -->
+            <div class="person">
+                <a href="marx.html"><img src="pictures/marx_border.png" style="height: 200px;width: 175px;"></a>
+            </div>
+            <div class="person">
+                <a href="lenin.html"><img src="pictures/lennin_border.png" style="height: 200px;width: 175px;"></a>
+            </div>
+            <div class="person">
+                <a href="maozedong.html"><img src="pictures/maozedong_border.png" style="height: 200px;width: 175px;"></a>
+            </div>
+            <div class="person">
+                <a href="stalin.html"><img src="pictures/stalin_border.png" style="height: 200px;width: 175px;"></a>
+            </div>
+            <img src="pictures/zhuozi.png">
+        </div>
+    </div>
+    
+    <div class="block" style="background-image: url(pictures/jianbian_block.png);">
+        <div class="contentcube">
+            <h2 style="font-family: 华文行楷;">概述</h2>
+            <p>
+                北京邮电大学图书馆红色主题区位于图书馆北区三层，区内设置五大专题，包括经典马克思主义主题区、
+                俄国马克思主义主题区、中国马克思主义主题区以及国外马克思主义主题区，同时还包括党史党建专题区。
+                红色主题区有着较为丰富的红色文献资源，收藏了习近平新时代中国特色社会主义思想相关著作，马克思、恩格斯、列宁及中国老一辈国家领导人著作，
+                中国社会主义建设理论研究著作及中国传统文化精粹文献等近五千册图书和期刊。除了丰富的纸质文献，
+                红色主题区还配置了马克思主义专题电子数据库和习近平新时代中国特色社会主义思想电子书柜等电子资源。
+                北京邮电大学图书馆红色主题区为北邮学子阅读红色经典，传承红色精神提供了重要的活动空间和实践场域。
+                <a href="https://mp.weixin.qq.com/s/eRKFL1eI2oJ-KfcFLUO1pA" target="_blank">[更多]</a>
+            </p>
+        </div>
+        <div id="pic">
+            <img src="pictures/zone3.jpg" style="height: 300px;width: 500px;margin-top: 15px;">
+        </div>
+    </div>
+    <div class="block">
+        <a name="pictures"><img src="pictures/tupianziliao.png"></a>
+        <div id="ex_person">
+            <!-- <img src="pictures/ex_person.png"> -->
+            <div class="person">
+                <a href="marx_pic.html"><img src="pictures/marx_border.png" style="height: 200px;width: 175px;"></a>
+            </div>
+            <div class="person">
+                <a href="lenin_pic.html"><img src="pictures/lennin_border.png" style="height: 200px;width: 175px;"></a>
+            </div>
+            <div class="person">
+                <a href="mao_pic.html"><img src="pictures/maozedong_border.png" style="height: 200px;width: 175px;"></a>
+            </div>
+            <div class="person">
+                <a href="stalin_pic.html"><img src="pictures/stalin_border.png" style="height: 200px;width: 175px;"></a>
+            </div>
+            <img src="pictures/zhuozi.png">
+        </div>
+    </div>
+    <!-- <div class="block">
+            <h1 id= "search">图书搜索</h1>
+        
+        <form action="/search" method="post" style="text-align: center;margin-top: 30px;">
+            <label for="keyword" style="text-align: center;margin-top: 60px;font-size: 18px;">关键词：</label>
+            <input type="text" id="keyword" name="keyword" required style="padding: 10px;font-size: 16px;">
+            <button type="submit" style="padding: 10px;font-size: 16px;">搜索</button>
+            
+        </form>
+    </div> -->
+    <div id="foot">
+        <p>北京邮电大学图书馆</p>
+    </div>
+</body>
+</html>

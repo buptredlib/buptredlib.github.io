@@ -1,0 +1,138 @@
+a,a:link,a:visited{ color:#333333; text-decoration:none}
+a{ color:#333333; text-decoration:none}
+a:link{ color:#333333; text-decoration:none}
+a:visited{ color:#333333; text-decoration:none}
+a:hover{ color:#FF9900; text-decoration: none }
+
+#head ul {
+	float: right;
+	margin: 0px;
+	padding: 0px;
+	width: 180px;
+	font-size: 13px;
+}
+
+#head ul li {
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 5px;
+	font-size: 12px;
+	list-style: none;
+}
+
+#head {
+	border-bottom: 1px dashed #CCCCCC;
+}
+
+#head,#top {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#head .left {
+	float: left;
+	width: 200px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	text-align: left;
+}
+
+.content {
+	width: 980px;
+	margin: 0 auto;
+}
+
+.hyc {
+	border-bottom: 2px solid #DF0013;
+	background: #F7F7F7;
+}
+
+.logo{
+    float: center;
+	width: 1000px;
+	height: 60px;
+	line-height: 60px;
+}
+.logo a {
+	text-align: center;
+	overflow: hidden;
+	font-size: 25px;
+	cursor: pointer;
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+
+#giant {
+	width: 100%;
+	margin:0 auto;
+	float: center;
+	text-align: center;
+}
+
+#bar {
+	width: 100%;
+	margin:2 auto;
+	text-align: center;
+}
+#bar ul {
+	height: 40px;
+	display: block
+}
+
+#bar ul li {
+	float: left;
+	width: 100px;
+	line-height: 55px;
+	padding-left: 25px;
+	padding-right: 25px;
+	text-align: center;
+	list-style: none;
+	text-decoration: none;
+	color: black;
+}
+#bar ul li a,#bar ul li a:visited {
+	color: rgb(102, 102, 102);
+	display: block!important;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	color: black;
+}
+
+#back {
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 10px;
+}
+#index-con {
+	width:980px; 
+	margin:0 auto;
+	box-shadow: 1px 0px 5px #717171; 
+	background:#FAFAFA;
+}
+#zone {
+	float: left;
+	width:980px; 
+	margin: auto;
+	text-align: center;
+}
+#intro {
+	float: left;
+	width: 680px;
+	margin:0 auto;
+}
+#intro p {
+	float: left;
+	margin-right: 10px;
+	text-indent: 2em;
+	font: 16px/25px simsun, Arial, Helvetica, sans-serif;
+}
+
+#show {
+	text-indent: 23%;
+	font: 16px/25px simsun, Arial, Helvetica, sans-serif;
+}

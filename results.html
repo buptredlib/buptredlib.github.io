@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索结果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>搜索结果</h1>
+    
+    <!-- Use the styles in the result display -->
+    <ul>
+        {% for result in results %}
+            <li class="result-item">
+                <strong>书名:</strong> {{ result['题名'] }}<br>
+                <strong>索书号:</strong> {{ result['索书号'] }}<br>
+                <strong>责任者:</strong> {{ result['责任者'] }}<br>
+                <strong>出版者:</strong> {{ result['出版者'] }}<br>
+                <strong>资料类型:</strong> {{ result['资料类型'] }}<br>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+</body>
+</html>
