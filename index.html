@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北邮图书馆红色文献库</title>
+    <title>北邮图书馆红色文献导航</title>
     <link rel="stylesheet" type="text/css" href="a_new_ui.css"/>
     <link rel="stylesheet" type="text/css" href="libui.css"/>
 </head>
 <body style="background-image:url(pictures/bg2.jpg);background-size: 100%;">
+    <button onclick="topFunction()" id="topBtn" title="回到顶部">↑</button>
+    <script>
+        // 当用户滚动时，执行scrollFunction
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            const topButton = document.getElementById("topBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+
+        // 点击按钮，返回顶部
+        function topFunction() {
+            document.body.scrollTop = 0; // 对于Safari
+            document.documentElement.scrollTop = 0; // 对于Chrome, Firefox, IE和Opera
+        }
+    </script>
     <div style="text-align: center;">
         <img src="pictures/head.png" style="height: 330px; width: 980px;">
     </div>
@@ -38,8 +58,51 @@
             </p>
         </div>
         <div id="pic">
-            <img src="pictures/zone3.jpg" style="height: 300px;width: 500px;margin-top: 15px;">
+            <img id = "slideshow" src="pictures/zone3.jpg" style="height: 300px;width: 500px;margin-top: 15px;">
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
         </div>
+        <script>
+            // 图片数组
+            const images = ["pictures/zone3.jpg", "pictures/zone2.jpg", "pictures/zone.jpg"];
+            let currentIndex = 0;
+    
+           // 获取img元素和dots
+            const imgElement = document.getElementById('slideshow');
+            const dots = document.getElementsByClassName('dot');
+
+            // 初始化dots
+            function initDots() {
+                dots[currentIndex].classList.add('active');
+            }
+
+            // 更新显示的图片和dots
+            function updateSlide() {
+                imgElement.src = images[currentIndex];
+                for (let dot of dots) {
+                    dot.classList.remove('active');
+                }
+                dots[currentIndex].classList.add('active');
+            }
+
+            // 自动更新图片
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateSlide();
+            }, 5000);
+
+            // 手动选择图片
+            function currentSlide(index) {
+                currentIndex = index;
+                updateSlide();
+            }
+
+            // 初始化
+            initDots();
+        </script>
     </div>
     <div class="block" style="background:none">
         <div class="smallblock" style="margin-left: 0;">
@@ -130,7 +193,7 @@
     </div>
    
     <div id="foot">
-        <p>北京邮电大学图书馆</p>
+        <p>北京邮电大学图书馆&ensp;&ensp;联系邮箱:buptredlib@163.com&ensp;&ensp;网页所用图片来自网络</p>
     </div>
 </body>
 </html>
