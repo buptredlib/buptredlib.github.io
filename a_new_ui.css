@@ -95,3 +95,61 @@
     font-size: 40px;
     font-family: "华文行楷";
 }
+/* 图片轮播下方点格式设置 */
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1px;
+}
+.dot {
+    height: 5px;
+    width: 5px;
+    margin: 0 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+.dot.active {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* 箭头 */
+.arrow {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s;
+}
+.arrow:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+.arrow-left {
+    left: 1px;
+}
+.arrow-right {
+    right: 1px;
+}
+
+#topBtn {
+    display: none; /* 初始隐藏按钮 */
+    position: fixed; /* 固定在页面 */
+    bottom: 20px; /* 距离底部20像素 */
+    right: 30px; /* 距离右侧30像素 */
+    z-index: 99; /* 使其在其他元素上方 */
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #555; /* 按钮背景色 */
+    color: white; /* 按钮文字颜色 */
+    cursor: pointer; /* 鼠标悬停时光标 */
+    padding: 15px;
+    border-radius: 10px; /* 圆角按钮 */
+}
+
+#topBtn:hover {
+    background-color: #333; /* 悬停时背景色 */
+}
