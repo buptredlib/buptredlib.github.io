@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北邮图书馆红色文献导航</title>
+    <title>北邮图书馆红色文献库</title>
     <link rel="stylesheet" type="text/css" href="a_new_ui.css"/>
     <link rel="stylesheet" type="text/css" href="libui.css"/>
 </head>
@@ -30,6 +30,37 @@
     </script>
     <div style="text-align: center;">
         <img src="pictures/head.png" style="height: 330px; width: 980px;">
+    </div>
+    <div id="bar">
+        <input type="text" id="search-input" style="width: 890px;height: 30px;margin-top: 5px;" placeholder="输入想要搜索的内容">
+        <button id="search-button" style="width: 70px;height: 30px;">搜索</button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+        <script>
+            let excelData = [];
+
+            // 读取Excel文件内容
+            fetch('all.xlsx')
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const firstSheetName = workbook.SheetNames[0];
+                    const worksheet = workbook.Sheets[firstSheetName];
+                    excelData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+                    console.log('Excel data loaded:', excelData);  // 输出加载的数据
+                })
+                .catch(error => console.error('Error loading Excel file:', error));
+
+            document.getElementById('search-button').addEventListener('click', function() {
+                const keyword = document.getElementById('search-input').value.toLowerCase();
+                const filteredData = excelData.filter(row => 
+                    row.some(cell => (cell && cell.toString().toLowerCase().includes(keyword)))
+                );
+
+                // 将搜索结果存储在localStorage中
+                localStorage.setItem('searchResults', JSON.stringify(filteredData));
+                window.location.href = 'results.html';
+            });
+        </script>
     </div>
     <div id="bar">
         <div class="content hyc">
