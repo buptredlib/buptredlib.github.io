@@ -34,6 +34,8 @@
     <div id="bar">
         <input type="text" id="search-input" style="width: 890px;height: 30px;margin-top: 5px;" placeholder="输入想要搜索的内容">
         <button id="search-button" style="width: 70px;height: 30px;">搜索</button>
+        <div id="autocomplete-list" class="autocomplete-suggestions"></div>
+        <div id="output"></div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
         <script>
             let excelData = [];
@@ -59,6 +61,50 @@
                 // 将搜索结果存储在localStorage中
                 localStorage.setItem('searchResults', JSON.stringify(filteredData));
                 window.location.href = 'results.html';
+            });
+            // 实现自动完成功能
+            document.getElementById('search-input').addEventListener('input', function() {
+                const keyword = this.value.toLowerCase();
+                const suggestions = [];
+
+                excelData.forEach(row => {
+                    row.forEach(cell => {
+                        if (cell && cell.toString().toLowerCase().includes(keyword) && !suggestions.includes(cell)) {
+                            suggestions.push(cell);
+                        }
+                    });
+                });
+
+                displaySuggestions(suggestions.slice(0, 10));  // 限制显示的建议数量
+            });
+
+            function displaySuggestions(suggestions) {
+                const autocompleteList = document.getElementById('autocomplete-list');
+                autocompleteList.innerHTML = '';
+
+                if (suggestions.length === 0) {
+                    autocompleteList.style.display = 'none';
+                    return;
+                }
+
+                suggestions.forEach(cell => {
+                    const suggestionItem = document.createElement('div');
+                    suggestionItem.className = 'autocomplete-suggestion';
+                    suggestionItem.textContent = cell;
+                    suggestionItem.addEventListener('click', function() {
+                        document.getElementById('search-input').value = cell;
+                        autocompleteList.style.display = 'none';
+                    });
+                    autocompleteList.appendChild(suggestionItem);
+                });
+
+                autocompleteList.style.display = 'block';
+            }
+
+            document.addEventListener('click', function(e) {
+                if (e.target !== document.getElementById('search-input')) {
+                    document.getElementById('autocomplete-list').style.display = 'none';
+                }
             });
         </script>
     </div>
