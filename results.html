@@ -13,16 +13,27 @@
         .result-item div {
             margin: 5px 0;
         }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <h1>Search Results</h1>
+    <a href="index.html" class="back-button">返回主页</a>
     <div id="output"></div>
-
     <script>
         function displayOutput(data) {
             const output = document.getElementById('output');
-            output.innerHTML = '<h2>Search Results</h2>';
+            output.innerHTML = '<h2>搜索结果</h2>';
 
             if (data.length === 0) {
                 output.innerHTML += '<p>No results found</p>';
