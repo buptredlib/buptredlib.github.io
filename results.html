@@ -3,24 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>搜索结果</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Search Results</title>
+    <style>
+        .result-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .result-item div {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>搜索结果</h1>
-    
-    <!-- Use the styles in the result display -->
-    <ul>
-        {% for result in results %}
-            <li class="result-item">
-                <strong>书名:</strong> {{ result['题名'] }}<br>
-                <strong>索书号:</strong> {{ result['索书号'] }}<br>
-                <strong>责任者:</strong> {{ result['责任者'] }}<br>
-                <strong>出版者:</strong> {{ result['出版者'] }}<br>
-                <strong>资料类型:</strong> {{ result['资料类型'] }}<br>
-            </li>
-            <br>
-        {% endfor %}
-    </ul>
+    <h1>Search Results</h1>
+    <div id="output"></div>
+
+    <script>
+        function displayOutput(data) {
+            const output = document.getElementById('output');
+            output.innerHTML = '<h2>Search Results</h2>';
+
+            if (data.length === 0) {
+                output.innerHTML += '<p>No results found</p>';
+                return;
+            }
+
+            data.forEach(row => {
+                const item = document.createElement('div');
+                item.className = 'result-item';
+
+                row.forEach((cell, index) => {
+                    const div = document.createElement('div');
+                    switch (index) {
+                        case 0:
+                            div.textContent = `索书号: ${cell}`;
+                            break;
+                        case 1:
+                            div.textContent = `资料类型: ${cell}`;
+                            break;
+                        case 2:
+                            div.textContent = `题名: ${cell}`;
+                            break;
+                        case 3:
+                            div.textContent = `责任者: ${cell}`;
+                            break;
+                        case 4:
+                            div.textContent = `出版者: ${cell}`;
+                            break;
+                        default:
+                            div.textContent = cell;
+                    }
+                    item.appendChild(div);
+                });
+
+                output.appendChild(item);
+            });
+        }
+
+        // 从localStorage中获取搜索结果并显示
+        const results = JSON.parse(localStorage.getItem('searchResults'));
+
+        if (results) {
+            displayOutput(results);
+        } else {
+            document.getElementById('output').innerHTML = '<p>No results found</p>';
+        }
+    </script>
 </body>
 </html>
